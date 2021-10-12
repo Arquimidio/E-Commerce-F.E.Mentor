@@ -1,12 +1,12 @@
+/************** MOBILE MENU ***************************/
 #mobile-modal{
     width: 100%;
 	height: 100%;
     background: var(--lightbox);
     position: fixed;
-    display: none;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 #lateral-menu{
@@ -30,4 +30,53 @@
 #mobile-menu-close-button{
     margin: 0px 0px 40px 0px;
     display: inline-block;
+}
+
+/******************* MOBILE CART ******************************************/
+
+#mobile-cart{
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    transform: translate(-50%, 0);
+    background: white;
+    width: 90%;
+    z-index: 1;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 30px rgba(119, 119, 119, 0.1);
+    min-height: 15rem;
+}
+
+#mobile-cart hr{
+    opacity: 0.2;
+}
+
+#mobile-cart p{
+    padding: 20px 10px;
+    font-weight: var(--font-heavy);
+}
+
+#mobile-cart div{
+    padding: 5px;
+}
+
+#product-cart{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#empty-cart{
+    font-weight: var(--font-heavy);
+    color: var(--neutral-gblue);
+    position: absolute;
+    top: 5rem;
+}
+
+.hide{
+    display: none;
 }
