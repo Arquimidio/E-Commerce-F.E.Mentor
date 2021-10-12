@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --mobile: 375px;
+    --desktop: 1440px;
+    --primary-orange: hsl(26, 100%, 55%);
+    --primary-paleorange: hsl(25, 100%, 94%);
+    --neutral-vdblue: hsl(220, 13%, 13%);
+    --neutral-gblue: hsl(220, 14%, 75%);
+    --neutral-lightgray: blue: hsl(223, 64%, 98%);
+    --white: white;
+    --black: black;
+    --lightbox: hsl(0, 0%, 0%, 75%);
+    --paragraph: 16px;
+    --font-family: 'Kumbh Sans', sans-serif;
+    --font-light: 400;
+    --font-heavy: 700;
+}
