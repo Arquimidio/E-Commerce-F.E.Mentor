@@ -19,3 +19,49 @@
     --font-light: 400;
     --font-heavy: 700;
 }
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav div{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#avatar{
+    width: 50%;
+}
+
+#images-container{
+    position: relative;
+}
+
+#actual-image{
+    max-width: 100%;
+}
+
+#previous-img, #next-img{
+    position: absolute;
+}
+
+#previous-img{
+    top: 50%;
+    left: 20px;
+}
+
+#next-img{
+    top: 50%;
+    right: 20px;
+}
