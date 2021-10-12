@@ -1,3 +1,5 @@
+/************* GENERIC CLASSES ************************/
+
 /************** MOBILE MENU ***************************/
 #mobile-modal{
     width: 100%;
@@ -43,38 +45,52 @@
     width: 90%;
     z-index: 1;
     border-radius: 10px;
-    padding: 10px;
     box-shadow: 5px 5px 30px rgba(119, 119, 119, 0.1);
-    min-height: 15rem;
+    min-height: 10rem;
 }
 
 #mobile-cart hr{
     opacity: 0.2;
 }
 
-#mobile-cart p{
-    padding: 20px 10px;
-    font-weight: var(--font-heavy);
-}
-
 #mobile-cart div{
     padding: 5px;
 }
 
+#cart-paragraph{
+    padding: 20px;
+    font-weight: var(--font-heavy);
+}
+
 #product-cart{
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
+}
+
+.cart-product-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-cart-image{
+    max-height: 5rem;
+    border-radius: 10px;
+}
+
+.product-cart-info p{
+    padding: 0;
+    font-weight: var(--font-light);
+    color: var(--neutral-gblue);
 }
 
 #empty-cart{
     font-weight: var(--font-heavy);
     color: var(--neutral-gblue);
     position: absolute;
-    top: 5rem;
+    top: 6rem;
+    left: 5rem;
 }
 
 .hide{

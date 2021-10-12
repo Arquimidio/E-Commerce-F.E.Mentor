@@ -30,6 +30,11 @@
 
 body{
     font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
 }
 
 #container{
@@ -39,6 +44,10 @@ body{
     flex-direction: column;
     height: 100%;
     font-family: var(--font-family);
+}
+
+strong{
+    color: rgba(63, 63, 63, 0.548);
 }
 
 /********************  TOP *****************************/
@@ -78,12 +87,12 @@ nav div{
 
 #previous-img{
     top: 50%;
-    left: 20px;
+    left: 10px;
 }
 
 #next-img{
     top: 50%;
-    right: 20px;
+    right: 10px;
 }
 
 .img-button{
@@ -92,7 +101,9 @@ nav div{
     align-items: center;
     background: var(--white);
     border-radius: 50%;
-    padding: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
 }
 
 /************************* PRODUCT INFO **************************/
@@ -189,4 +200,13 @@ nav div{
 
 .quantity-button{
     cursor: pointer;
+}
+
+/************ Footer ****************/
+footer{
+    text-align: center;
+    background: var(--neutral-lightgray);
+    width: 100%;
+    padding: 10px;
+    color: gray;
 }
