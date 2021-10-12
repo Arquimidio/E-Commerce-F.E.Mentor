@@ -29,6 +29,7 @@
     font-family: var(--font-family);
 }
 
+/********************  TOP *****************************/
 nav{
     display: flex;
     justify-content: space-between;
@@ -46,6 +47,7 @@ nav div{
     width: 30%;
 }
 
+/*********************  IMAGES ***********************/
 #images-container{
     position: relative;
 }
@@ -68,6 +70,16 @@ nav div{
     right: 20px;
 }
 
+.img-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+/************************* PRODUCT INFO **************************/
 #text-container{
     padding: 20px;
 }
@@ -89,9 +101,72 @@ nav div{
 #product-name{
     color: var(--black);
     font-weight: var(--font-heavy);
-    font-size: 2.6em;
+    font-size: 2.2em;
 }
 
 #small-text{
     color: var(--neutral-gblue);
+}
+
+/******************** PRICES *********************/
+#prices{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#discount{
+    display: flex;
+    align-items: center;
+}
+
+#price-with-discount{
+    font-weight: var(--font-heavy);
+    font-size: 2.2rem;
+    margin-right: 20px;
+}
+
+#discount-percentage{
+    font-weight: var(--font-heavy);
+    color: var(--primary-orange);
+    background: var(--primary-paleorange);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#original-price{
+    text-decoration: line-through;
+    color: var(--neutral-gblue);
+}
+
+/****************** BUY AREA ******************************/
+#buy-area{
+}
+#quantity-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--neutral-lightgray);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+#add-to-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 10px;
+    background: var(--primary-orange);
+    color: var(--white);
+    font-weight: var(--font-heavy);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#add-to-cart p{
+    margin: 0px 20px;
 }
