@@ -3,6 +3,14 @@
     margin: 0;
 }
 
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+
 :root{
     --mobile: 375px;
     --desktop: 1440px;
@@ -61,7 +69,7 @@ nav div{
 }
 
 #actual-image{
-    max-width: 100%;
+    width: 100%;
 }
 
 #previous-img, #next-img{
@@ -84,7 +92,7 @@ nav div{
     align-items: center;
     background: var(--white);
     border-radius: 50%;
-    padding: 20px;
+    padding: 10px;
 }
 
 /************************* PRODUCT INFO **************************/
@@ -177,4 +185,8 @@ nav div{
 
 #add-to-cart p{
     margin: 0px 20px;
+}
+
+.quantity-button{
+    cursor: pointer;
 }
