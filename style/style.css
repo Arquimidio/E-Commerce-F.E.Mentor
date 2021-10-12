@@ -10,7 +10,7 @@
     --primary-paleorange: hsl(25, 100%, 94%);
     --neutral-vdblue: hsl(220, 13%, 13%);
     --neutral-gblue: hsl(220, 14%, 75%);
-    --neutral-lightgray: blue: hsl(223, 64%, 98%);
+    --neutral-lightgray: hsl(223, 64%, 98%);
     --white: white;
     --black: black;
     --lightbox: hsl(0, 0%, 0%, 75%);
@@ -26,6 +26,7 @@
     align-items: center;
     flex-direction: column;
     border: 1px solid red;
+    font-family: var(--font-family);
 }
 
 nav{
@@ -37,11 +38,12 @@ nav{
 nav div{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 10px;
 }
 
 #avatar{
-    width: 50%;
+    width: 30%;
 }
 
 #images-container{
@@ -64,4 +66,32 @@ nav div{
 #next-img{
     top: 50%;
     right: 20px;
+}
+
+#text-container{
+    padding: 20px;
+}
+
+#text-container article{
+    margin: 20px 0px;
+}
+
+#company{
+    text-transform: uppercase;
+    color: var(--primary-orange);
+    font-weight: var(--font-heavy);
+}
+
+#product-info *{
+    margin: 10px 0px;
+}
+
+#product-name{
+    color: var(--black);
+    font-weight: var(--font-heavy);
+    font-size: 2.6em;
+}
+
+#small-text{
+    color: var(--neutral-gblue);
 }
