@@ -74,6 +74,7 @@ nav div{
 
 /*********************  IMAGES ***********************/
 #images-container{
+    background: red;
     position: relative;
 }
 
