@@ -159,8 +159,18 @@ const cart = (function(){
     function removeFromCart(){
         let parent = this.closest('.cart-product-wrapper')
         cartProducts.removeChild(parent)
-        if(cartProducts.childNodes.length === 1){
+        if(cartProducts.childNodes.length <= 3){
             document.getElementById('empty-cart').classList.remove('hide')
+            showCheckoutBtn(false)
+        }
+    }
+
+    function showCheckoutBtn(show){
+        const btn = document.getElementById('checkout')
+        if(!show){
+            btn.classList.add('hide')
+        }else{
+            btn.classList.remove('hide')
         }
     }
 
@@ -184,10 +194,13 @@ const cart = (function(){
         description.appendChild(price)
         eltArr.forEach(elt => wrapper.appendChild(elt))
         cartProducts.appendChild(wrapper)
+        showCheckoutBtn(true)
         hideEmptyCartMsg()
     }
 
     addToCartBtn.addEventListener('click', addToCart)
+
+    return {showCheckoutBtn}
 })()
 
 
