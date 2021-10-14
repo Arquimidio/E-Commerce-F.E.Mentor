@@ -69,6 +69,10 @@ nav div{
     padding: 10px;
 }
 
+#category-list{
+    display: none;
+}
+
 #avatar{
     width: 30%;
 }
