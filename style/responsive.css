@@ -69,8 +69,7 @@
     }
 
     #mobile-cart{
-        left: 10px;
-        top: 100px;
-        background: red;
+        top: 50px;
+        left: calc(75% - 40px);
     }
 }
