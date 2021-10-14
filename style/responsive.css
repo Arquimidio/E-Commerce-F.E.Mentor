@@ -1,4 +1,9 @@
 @media screen and (min-width: 475px) {
+
+    nav{
+        max-width: 70vw;
+    }
+
     #container{
         display: flex;
         justify-content: center;
@@ -9,6 +14,19 @@
     #img-and-thumbs{
         width: 30%;
         margin: 0 5%;
+    }
+
+    #thumbs-container{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0px;
+        flex-wrap: wrap;
+    }
+
+    #thumbs-container img{
+        width: 20%;
+        border-radius: 10px;
+        margin: 10px;
     }
 
 
@@ -48,5 +66,11 @@
     #quantity-area{
         width: 20%;
         height: 10%;
+    }
+
+    #mobile-cart{
+        left: 10px;
+        top: 100px;
+        background: red;
     }
 }

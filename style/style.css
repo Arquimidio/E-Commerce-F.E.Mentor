@@ -83,6 +83,10 @@ nav div{
     position: relative;
 }
 
+#thumbs-container{
+    display: none;
+}
+
 #actual-image{
     width: 100%;
 }
