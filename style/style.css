@@ -222,5 +222,11 @@ footer{
     background: var(--neutral-lightgray);
     width: 100%;
     padding: 10px;
+    margin-top: 3rem;
     color: gray;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--primary-orange);
 }

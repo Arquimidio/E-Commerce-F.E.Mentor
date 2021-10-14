@@ -13,11 +13,16 @@
         display: none;
     }
 
+    #left{
+        flex-wrap: wrap;
+    }
+
     #category-list{
         display: flex;
         align-items: center;
         list-style-type: none;
         margin-left: 25px;
+        flex-wrap: wrap;
     }
 
     #category-list li{
@@ -34,11 +39,11 @@
     #category-list li:before{
         content: '';
         width: 100%;
-        height: 1.2px;
+        height: 2px;
         background: var(--primary-orange);
         position: absolute;
         display: none;
-        top: calc(100% + 2.15rem);
+        top: calc(100% + 2.1rem);
     }
 
     #category-list li:hover:before{
@@ -110,7 +115,8 @@
     }
 
     #mobile-cart{
-        top: cals(15% + 10px);
+        top: 8rem;
         left: calc(75% - 40px);
+        z-index: 2;
     }
 }
