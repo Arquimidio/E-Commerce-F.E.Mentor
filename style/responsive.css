@@ -79,7 +79,11 @@
     #actual-image{
         width: 100%;
         border-radius: 20px;
-    }    
+    }  
+    
+    #next-img, #previous-img{
+        display: none;
+    }
 
     main{
         display: flex;

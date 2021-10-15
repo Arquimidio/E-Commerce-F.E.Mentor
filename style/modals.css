@@ -1,7 +1,7 @@
 /************* GENERIC CLASSES ************************/
 
 /************** MOBILE MENU ***************************/
-#mobile-modal{
+.lightbox{
     width: 100%;
 	height: 100%;
     background: var(--lightbox);
@@ -111,3 +111,10 @@
     display: none;
 }
 
+/**************** LIGHTBOX *****************************/
+
+#lightbox-area{
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}

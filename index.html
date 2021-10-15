@@ -15,7 +15,7 @@
 </head>
 <body>
   <!-- INÍCIO MODAIS -->
-  <div id="mobile-modal" class="hide">
+  <div id="mobile-modal" class="hide lightbox">
     <aside id="lateral-menu">
       <div id="mobile-menu-close-button"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg></div>
       <ul>
@@ -36,6 +36,23 @@
     </div>
     <div id="checkout-container">
       <div id="checkout" class="hide">Checkout</div>
+    </div>
+  </div>
+
+  <div class="lightbox hide" id="lightbox-area">
+    <div id="lightbox-container">
+      <div id="close-lightbox"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg></div>
+      <div id="main-image-wrapper">
+        <div id="next-lightbox"></div>
+        <div id="main-image-lightbox"> <img src="images/image-product-1.jpg" alt="sneakers" id="lightbox-actual-main"></div>
+        <div id="previous-lightbox"></div>
+      </div>
+      <div id="lightbox-thumbnails">
+        <img src="images/image-product-1-thumbnail.jpg" alt="sneaker">
+        <img src="images/image-product-2-thumbnail.jpg" alt="sneaker">
+        <img src="images/image-product-3-thumbnail.jpg" alt="sneaker">
+        <img src="images/image-product-4-thumbnail.jpg" alt="sneaker">
+      </div>
     </div>
   </div>
   <!-- FIM MODAIS -->
@@ -65,9 +82,9 @@
       </section>
       <div id="thumbs-container">
         <img src="images/image-product-1-thumbnail.jpg" alt="sneaker">
-        <img src="images/image-product-2-thumbnail.jpg" alt="">
-        <img src="images/image-product-3-thumbnail.jpg" alt="">
-        <img src="images/image-product-4-thumbnail.jpg" alt="">
+        <img src="images/image-product-2-thumbnail.jpg" alt="sneaker">
+        <img src="images/image-product-3-thumbnail.jpg" alt="sneaker">
+        <img src="images/image-product-4-thumbnail.jpg" alt="sneaker">
       </div>
     </div>
     <main>
