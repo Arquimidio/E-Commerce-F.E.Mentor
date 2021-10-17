@@ -113,8 +113,56 @@
 
 /**************** LIGHTBOX *****************************/
 
+
+
 #lightbox-area{
-    /*display: flex;*/
+    display: none;
     justify-content: center;
     align-items: center;
+}
+
+#main-image-wrapper{
+    position: relative;
+}
+
+#lightbox-thumbnails{
+    display: flex;
+    justify-content: center;
+}
+
+#lightbox-thumbnails img{
+    width: 5%;
+    margin: 1.7%;
+    border-radius: 5px;
+}
+
+#main-image-lightbox{
+    display: flex;
+    justify-content: center;
+}
+
+#lightbox-actual-main{
+    width: 30%;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#close-lightbox{
+    position: absolute;
+    right: 35%;
+    top: -10%;
+}
+
+#previous-lightbox, #next-lightbox{
+    position: absolute;
+}
+
+#previous-lightbox{
+    top: 50%;
+    left: 36%;
+}
+
+#next-lightbox{
+    top: 50%;
+    right: 36%;
 }

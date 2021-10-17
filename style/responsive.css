@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 475px) {
 
     nav{
@@ -90,7 +91,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 40%;
+        max-width: 45%;
         max-height: 100%;
     }
 
@@ -114,7 +115,7 @@
     }
 
     #quantity-area{
-        width: 20%;
+        width: 25%;
         height: 10%;
     }
 
@@ -122,5 +123,22 @@
         top: 8rem;
         left: calc(75% - 40px);
         z-index: 2;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #buy-area{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #add-to-cart{
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    #quantity-area{
+        width: 100%;
+        height: 10%;
     }
 }
