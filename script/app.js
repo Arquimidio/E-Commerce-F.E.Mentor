@@ -194,6 +194,7 @@ const cart = (function(){
         let remove = createElt('div', 'delete-from-cart')
         let eltArr = [img, description, remove]
         remove.addEventListener('click', removeFromCart)
+        remove.classList.add('btn')
         strong.textContent = calculatePrice(getProductAmount(), getUnityPrice())
         name.textContent = getProductName()
         price.textContent = makePriceString() 

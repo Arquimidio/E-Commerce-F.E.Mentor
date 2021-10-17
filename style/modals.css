@@ -1,9 +1,7 @@
 /************* GENERIC CLASSES ************************/
 
 /************** MOBILE MENU ***************************/
-#hamburguer-menu{
-    cursor: pointer;
-}
+
 
 .lightbox{
     width: 100%;
@@ -157,7 +155,6 @@
     top: -10%;
     color: #69707D;
     font-weight: 900;
-    cursor: pointer;
 }
 
 #close-lightbox:hover{
@@ -166,7 +163,6 @@
 
 #previous-lightbox, #next-lightbox{
     position: absolute;
-    cursor: pointer;
 }
 
 #previous-lightbox{
