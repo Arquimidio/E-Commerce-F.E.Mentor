@@ -7,7 +7,7 @@
     }
 
     nav div{
-        padding: 15px 0px;
+        padding: 20px 0px;
     }
 
    
@@ -51,7 +51,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 45%;
+        max-width: 40%;
         max-height: 100%;
     }
 
@@ -86,11 +86,10 @@
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (min-width: 475px) and (max-width: 800px){
     nav div{
-        padding: 15px 10px 10px 0;
+        padding: 15px 10px;
     }
-
     #buy-area{
         display: flex;
         flex-direction: column;
@@ -144,7 +143,7 @@
         background: var(--primary-orange);
         position: absolute;
         display: none;
-        top: calc(100% + 2.1rem);
+        top: calc(100% + 2.5rem);
     }
 
     #category-list li:hover:before{

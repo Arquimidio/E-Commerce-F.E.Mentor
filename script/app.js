@@ -4,7 +4,6 @@ const modals = (function(){
     const closeMobileMenuBtn = document.getElementById('mobile-menu-close-button')
     const cartModal = document.getElementById('mobile-cart')
     const openCartBtn = document.getElementById('nav-cart')
-    const thumbnails = [...document.getElementById('thumbs-container').children]
     const lightbox = document.getElementById('lightbox-area')
     const lightboxThumbnails = [...document.getElementById('lightbox-thumbnails').children]
     const lightboxMainImage = document.getElementById('lightbox-actual-main')
@@ -22,7 +21,8 @@ const modals = (function(){
         cartModal.classList.remove('hide')
     }
 
-    function openLightBox(){
+    function openLightBox(event){
+        lightboxMainImage.src = event.target.src.replace('-thumbnail', '')
         lightbox.style.display = 'flex'
     }
 
@@ -39,13 +39,12 @@ const modals = (function(){
     }
 
     function changeMainImageWithThumb(event){
-        lightboxMainImage.src = event.target.src.replace('-thumbnail', '')
+        lightboxMainImage.src = thumbToMain(event.target.src)
     }
 
     closeMobileMenuBtn.addEventListener('click', closeMobileMenu)
     openMobileMenuBtn.addEventListener('click', openMobileMenu)
     openCartBtn.addEventListener('click', openCart)
-    thumbnails.map(elt => elt.addEventListener('click', openLightBox))
     lightboxThumbnails.forEach(elt => elt.addEventListener('click', changeMainImageWithThumb))
     closeLightboxBtn.addEventListener('click', closeLightbox)
     document.addEventListener('click', verifyClick)  
@@ -58,6 +57,7 @@ const imgFunctionalities = (function(){
     const previousImgBtn = document.getElementById('previous-img')
     const nextImgBtn = document.getElementById('next-img')
     const img = document.getElementById('actual-image')
+    const thumbnails = [...document.getElementById('thumbs-container').children]
     let actualImage = 1
 
     function getNextImage(){
@@ -82,9 +82,18 @@ const imgFunctionalities = (function(){
         img.src = `images/image-product-${actualImage}.jpg`
     }
 
+    function changeImageWithThumb(event){
+        img.src = thumbToMain(event.target.src)
+    }
+
+    function thumbToMain(src){
+        return src.replace('-thumbnail', '')
+    }
+
     const listeners = [
         previousImgBtn.addEventListener('click', getPreviousImage),
-        nextImgBtn.addEventListener('click', getNextImage)
+        nextImgBtn.addEventListener('click', getNextImage),
+        thumbnails.map(elt => elt.addEventListener('click', changeImageWithThumb))
     ]
 
     return{
@@ -194,7 +203,7 @@ const cart = (function(){
         let remove = createElt('div', 'delete-from-cart')
         let eltArr = [img, description, remove]
         remove.addEventListener('click', removeFromCart)
-        remove.classList.add('btn')
+        remove.classList.add('pointer')
         strong.textContent = calculatePrice(getProductAmount(), getUnityPrice())
         name.textContent = getProductName()
         price.textContent = makePriceString() 
