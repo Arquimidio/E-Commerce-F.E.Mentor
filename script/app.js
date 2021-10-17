@@ -9,7 +9,7 @@ const imgFunctionalities = (function(){
     const thumbnails = [...document.getElementById('thumbs-container').children]
     let actualImage = 1
 
-    function getNextImage(){
+    function getNextImage(img){
         if(actualImage < 4){
             ++actualImage
         }else{
@@ -33,10 +33,16 @@ const imgFunctionalities = (function(){
 
     function changeImageWithThumb(event){
         img.src = thumbToMain(event.target.src)
+        actualImage = getImageNumber(event.target)
     }
 
     function thumbToMain(src){
         return src.replace('-thumbnail', '')
+    }
+    
+    function getImageNumber(elt){
+        let matches = elt.src.match(/[0-9]/gi)
+        return matches[matches.length - 1]
     }
 
     const listeners = [
@@ -52,7 +58,8 @@ const imgFunctionalities = (function(){
         getPreviousImage,
         changeImage,
         img,
-        thumbToMain
+        thumbToMain,
+        getImageNumber
     }
 })()
 
@@ -66,6 +73,32 @@ const modals = (function(){
     const lightboxThumbnails = [...document.getElementById('lightbox-thumbnails').children]
     const lightboxMainImage = document.getElementById('lightbox-actual-main')
     const closeLightboxBtn = document.getElementById('close-lightbox')
+    const nextLightbox = document.getElementById("next-lightbox")
+    const previousLightbox = document.getElementById("previous-lightbox")
+    let actualImage = 1
+
+    function getNextImage(){
+        if(actualImage < 4){
+            ++actualImage
+        }else{
+            actualImage = 1
+        }
+        changeImage()
+    }
+
+    function getPreviousImage(){
+        if(actualImage > 1){
+            --actualImage
+        }else{
+            actualImage = 4
+        }
+        changeImage()
+    }
+
+    function changeImage(event){
+        lightboxMainImage.src = `images/image-product-${actualImage}.jpg`
+    }
+
 
     function closeMobileMenu(){
         mobileModal.classList.add('hide')
@@ -98,6 +131,8 @@ const modals = (function(){
 
     function changeMainImageWithThumb(event){
         lightboxMainImage.src = imgFunctionalities.thumbToMain(event.target.src)
+        actualImage = imgFunctionalities.getImageNumber(event.target)
+        console.log(actualImage)
     }
 
     closeMobileMenuBtn.addEventListener('click', closeMobileMenu)
@@ -107,6 +142,8 @@ const modals = (function(){
     closeLightboxBtn.addEventListener('click', closeLightbox)
     imgFunctionalities.img.addEventListener('click', openLightBox)
     document.addEventListener('click', verifyClick)  
+    nextLightbox.addEventListener('click', getNextImage)
+    previousLightbox.addEventListener('click', getPreviousImage)
 
 })()
 
