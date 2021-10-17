@@ -1,6 +1,10 @@
 /************* GENERIC CLASSES ************************/
 
 /************** MOBILE MENU ***************************/
+#hamburguer-menu{
+    cursor: pointer;
+}
+
 .lightbox{
     width: 100%;
 	height: 100%;
