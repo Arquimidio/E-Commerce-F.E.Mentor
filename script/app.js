@@ -6,6 +6,7 @@ const modals = (function(){
     const openCartBtn = document.getElementById('nav-cart')
     const thumbnails = [...document.getElementById('thumbs-container').children]
     const lightbox = document.getElementById('lightbox-area')
+    const closeLightboxBtn = document.getElementById('close-lightbox')
 
     function closeMobileMenu(){
         mobileModal.classList.add('hide')
@@ -23,6 +24,18 @@ const modals = (function(){
         lightbox.style.display = 'flex'
     }
 
+    function closeLightbox(){
+        lightbox.style.display = 'none'
+    }
+
+    function changeSvgColor(mouseon){
+        if(mouseon){
+            closeLightboxBtn.firstChild.fill = "red"
+        }else{
+            closeLightboxBtn.firstChild.fill = "blue"
+        }
+    }
+
     function verifyClick(e){
         if(!cartModal.contains(e.target) && 
            !document.querySelector('nav').contains(e.target) 
@@ -35,6 +48,7 @@ const modals = (function(){
     openMobileMenuBtn.addEventListener('click', openMobileMenu)
     openCartBtn.addEventListener('click', openCart)
     thumbnails.map(elt => elt.addEventListener('click', openLightBox))
+    closeLightboxBtn.addEventListener('click', closeLightbox)
     document.addEventListener('click', verifyClick)  
 
 })()
@@ -179,7 +193,7 @@ const cart = (function(){
         let name = createElt('p', 'product-cart-name')
         let price = createElt('p', 'product-cart-price')
         let remove = createElt('div', 'delete-from-cart')
-        let eltArr = [img, description, name, price, remove]
+        let eltArr = [img, description, remove]
         remove.addEventListener('click', removeFromCart)
         strong.textContent = calculatePrice(getProductAmount(), getUnityPrice())
         name.textContent = getProductName()

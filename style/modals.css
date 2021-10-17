@@ -151,10 +151,18 @@
     position: absolute;
     right: 35%;
     top: -10%;
+    color: #69707D;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#close-lightbox:hover{
+    color:red;
 }
 
 #previous-lightbox, #next-lightbox{
     position: absolute;
+    cursor: pointer;
 }
 
 #previous-lightbox{
