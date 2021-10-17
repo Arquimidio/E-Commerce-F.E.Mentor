@@ -1,55 +1,4 @@
-const modals = (function(){
-    const mobileModal = document.getElementById('mobile-modal')
-    const openMobileMenuBtn = document.getElementById('hamburguer-menu')
-    const closeMobileMenuBtn = document.getElementById('mobile-menu-close-button')
-    const cartModal = document.getElementById('mobile-cart')
-    const openCartBtn = document.getElementById('nav-cart')
-    const lightbox = document.getElementById('lightbox-area')
-    const lightboxThumbnails = [...document.getElementById('lightbox-thumbnails').children]
-    const lightboxMainImage = document.getElementById('lightbox-actual-main')
-    const closeLightboxBtn = document.getElementById('close-lightbox')
 
-    function closeMobileMenu(){
-        mobileModal.classList.add('hide')
-    }
-
-    function openMobileMenu(){
-        mobileModal.classList.remove('hide')
-    }
-
-    function openCart(){
-        cartModal.classList.remove('hide')
-    }
-
-    function openLightBox(event){
-        lightboxMainImage.src = event.target.src.replace('-thumbnail', '')
-        lightbox.style.display = 'flex'
-    }
-
-    function closeLightbox(){
-        lightbox.style.display = 'none'
-    }
-
-    function verifyClick(e){
-        if(!cartModal.contains(e.target) && 
-           !document.querySelector('nav').contains(e.target) 
-           ){
-            cartModal.classList.add('hide')
-        }
-    }
-
-    function changeMainImageWithThumb(event){
-        lightboxMainImage.src = thumbToMain(event.target.src)
-    }
-
-    closeMobileMenuBtn.addEventListener('click', closeMobileMenu)
-    openMobileMenuBtn.addEventListener('click', openMobileMenu)
-    openCartBtn.addEventListener('click', openCart)
-    lightboxThumbnails.forEach(elt => elt.addEventListener('click', changeMainImageWithThumb))
-    closeLightboxBtn.addEventListener('click', closeLightbox)
-    document.addEventListener('click', verifyClick)  
-
-})()
 
 
 /*******************IMAGE CHANGER*********************** */
@@ -101,8 +50,64 @@ const imgFunctionalities = (function(){
         nextImgBtn,
         getNextImage,
         getPreviousImage,
-        changeImage
+        changeImage,
+        img,
+        thumbToMain
     }
+})()
+
+const modals = (function(){
+    const mobileModal = document.getElementById('mobile-modal')
+    const openMobileMenuBtn = document.getElementById('hamburguer-menu')
+    const closeMobileMenuBtn = document.getElementById('mobile-menu-close-button')
+    const cartModal = document.getElementById('mobile-cart')
+    const openCartBtn = document.getElementById('nav-cart')
+    const lightbox = document.getElementById('lightbox-area')
+    const lightboxThumbnails = [...document.getElementById('lightbox-thumbnails').children]
+    const lightboxMainImage = document.getElementById('lightbox-actual-main')
+    const closeLightboxBtn = document.getElementById('close-lightbox')
+
+    function closeMobileMenu(){
+        mobileModal.classList.add('hide')
+    }
+
+    function openMobileMenu(){
+        mobileModal.classList.remove('hide')
+    }
+
+    function openCart(){
+        cartModal.classList.remove('hide')
+    }
+
+    function openLightBox(event){
+        lightboxMainImage.src = event.target.src.replace('-thumbnail', '')
+        lightbox.style.display = 'flex'
+    }
+
+    function closeLightbox(){
+        lightbox.style.display = 'none'
+    }
+
+    function verifyClick(e){
+        if(!cartModal.contains(e.target) && 
+           !document.querySelector('nav').contains(e.target) 
+           ){
+            cartModal.classList.add('hide')
+        }
+    }
+
+    function changeMainImageWithThumb(event){
+        lightboxMainImage.src = imgFunctionalities.thumbToMain(event.target.src)
+    }
+
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu)
+    openMobileMenuBtn.addEventListener('click', openMobileMenu)
+    openCartBtn.addEventListener('click', openCart)
+    lightboxThumbnails.forEach(elt => elt.addEventListener('click', changeMainImageWithThumb))
+    closeLightboxBtn.addEventListener('click', closeLightbox)
+    imgFunctionalities.img.addEventListener('click', openLightBox)
+    document.addEventListener('click', verifyClick)  
+
 })()
 
 
