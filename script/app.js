@@ -6,6 +6,8 @@ const modals = (function(){
     const openCartBtn = document.getElementById('nav-cart')
     const thumbnails = [...document.getElementById('thumbs-container').children]
     const lightbox = document.getElementById('lightbox-area')
+    const lightboxThumbnails = [...document.getElementById('lightbox-thumbnails').children]
+    const lightboxMainImage = document.getElementById('lightbox-actual-main')
     const closeLightboxBtn = document.getElementById('close-lightbox')
 
     function closeMobileMenu(){
@@ -28,14 +30,6 @@ const modals = (function(){
         lightbox.style.display = 'none'
     }
 
-    function changeSvgColor(mouseon){
-        if(mouseon){
-            closeLightboxBtn.firstChild.fill = "red"
-        }else{
-            closeLightboxBtn.firstChild.fill = "blue"
-        }
-    }
-
     function verifyClick(e){
         if(!cartModal.contains(e.target) && 
            !document.querySelector('nav').contains(e.target) 
@@ -44,10 +38,15 @@ const modals = (function(){
         }
     }
 
+    function changeMainImageWithThumb(event){
+        lightboxMainImage.src = event.target.src.replace('-thumbnail', '')
+    }
+
     closeMobileMenuBtn.addEventListener('click', closeMobileMenu)
     openMobileMenuBtn.addEventListener('click', openMobileMenu)
     openCartBtn.addEventListener('click', openCart)
     thumbnails.map(elt => elt.addEventListener('click', openLightBox))
+    lightboxThumbnails.forEach(elt => elt.addEventListener('click', changeMainImageWithThumb))
     closeLightboxBtn.addEventListener('click', closeLightbox)
     document.addEventListener('click', verifyClick)  
 

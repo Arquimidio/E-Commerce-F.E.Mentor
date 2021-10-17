@@ -131,8 +131,8 @@
 }
 
 #lightbox-thumbnails img{
-    width: 5%;
-    margin: 1.7%;
+    width: 6%;
+    margin: 1.8%;
     border-radius: 5px;
 }
 
@@ -142,14 +142,14 @@
 }
 
 #lightbox-actual-main{
-    width: 30%;
+    width: 35%;
     align-items: center;
     border-radius: 5px;
 }
 
 #close-lightbox{
     position: absolute;
-    right: 35%;
+    right: 32.5%;
     top: -10%;
     color: #69707D;
     font-weight: 900;
@@ -167,10 +167,10 @@
 
 #previous-lightbox{
     top: 50%;
-    left: 36%;
+    left: 31%;
 }
 
 #next-lightbox{
     top: 50%;
-    right: 36%;
+    right: 31%;
 }
