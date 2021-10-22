@@ -158,7 +158,7 @@
 }
 
 #close-lightbox:hover{
-    color:red;
+    color: var(--primary-orange);
 }
 
 #previous-lightbox, #next-lightbox{

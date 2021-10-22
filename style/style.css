@@ -73,6 +73,19 @@ nav div{
     cursor: pointer;
 }
 
+#products-in-cart{
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    background: var(--primary-orange);
+    color: var(--white);
+    position: relative;
+    padding: 0px;
+    top: -10px;
+    left: 30px;
+    border-radius: 50%;
+}
+
 #category-list{
     display: none;
     font-size: 80%;

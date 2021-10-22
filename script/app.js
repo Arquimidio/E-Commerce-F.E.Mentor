@@ -2,6 +2,7 @@
 
 
 /*******************IMAGE CHANGER*********************** */
+
 const imgFunctionalities = (function(){
     const previousImgBtn = document.getElementById('previous-img')
     const nextImgBtn = document.getElementById('next-img')
@@ -9,20 +10,14 @@ const imgFunctionalities = (function(){
     const thumbnails = [...document.getElementById('thumbs-container').children]
     let actualImage = 1
 
-    function getNextImage(img){
-        if(actualImage < 4){
-            ++actualImage
-        }else{
-            actualImage = 1
-        }
-        changeImage()
-    }
-
-    function getPreviousImage(){
-        if(actualImage > 1){
-            --actualImage
-        }else{
-            actualImage = 4
+    function getImage(direction){
+        switch(direction){
+            case 'previous':
+                actualImage < 4? ++actualImage: actualImage = 1
+                break;
+            case 'next':
+                actualImage > 1? --actualImage: actualImage = 4
+                break;
         }
         changeImage()
     }
@@ -46,16 +41,15 @@ const imgFunctionalities = (function(){
     }
 
     const listeners = [
-        previousImgBtn.addEventListener('click', getPreviousImage),
-        nextImgBtn.addEventListener('click', getNextImage),
+        previousImgBtn.addEventListener('click', () => getImage('previous')),
+        nextImgBtn.addEventListener('click', () => getImage('next')),
         thumbnails.map(elt => elt.addEventListener('click', changeImageWithThumb))
     ]
 
     return{
         previousImgBtn,
         nextImgBtn,
-        getNextImage,
-        getPreviousImage,
+        getImage,
         changeImage,
         img,
         thumbToMain,
@@ -77,25 +71,20 @@ const modals = (function(){
     const previousLightbox = document.getElementById("previous-lightbox")
     let actualImage = 1
 
-    function getNextImage(){
-        if(actualImage < 4){
-            ++actualImage
-        }else{
-            actualImage = 1
+    function getImage(direction){
+        switch(direction){
+            case 'previous':
+                actualImage < 4? ++actualImage: actualImage = 1
+                break;
+            case 'next':
+                actualImage > 1? --actualImage: actualImage = 4
+                break;
         }
         changeImage()
     }
 
-    function getPreviousImage(){
-        if(actualImage > 1){
-            --actualImage
-        }else{
-            actualImage = 4
-        }
-        changeImage()
-    }
 
-    function changeImage(event){
+    function changeImage(){
         lightboxMainImage.src = `images/image-product-${actualImage}.jpg`
     }
 
@@ -142,8 +131,8 @@ const modals = (function(){
     closeLightboxBtn.addEventListener('click', closeLightbox)
     imgFunctionalities.img.addEventListener('click', openLightBox)
     document.addEventListener('click', verifyClick)  
-    nextLightbox.addEventListener('click', getNextImage)
-    previousLightbox.addEventListener('click', getPreviousImage)
+    nextLightbox.addEventListener('click', () => getImage('next'))
+    previousLightbox.addEventListener('click', () => getImage('previous'))
 
 })()
 
