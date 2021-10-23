@@ -120,6 +120,10 @@ nav div{
     filter: brightness(1.1);
 }
 
+.thumb:focus-within{
+    box-shadow: 10px 20px black;
+}
+
 #images-container{
     position: relative;
 }
@@ -242,6 +246,10 @@ nav div{
     color: var(--white);
     font-weight: var(--font-heavy);
     border-radius: 10px;
+}
+
+#add-to-cart:hover{
+    filter: brightness(1.2);
 }
 
 #add-to-cart p{

@@ -78,10 +78,10 @@ const modals = (function(){
 
     function getImage(direction){
         switch(direction){
-            case 'previous':
+            case 'next':
                 actualImage < 4? ++actualImage: actualImage = 1
                 break;
-            case 'next':
+            case 'previous':
                 actualImage > 1? --actualImage: actualImage = 4
                 break;
         }
