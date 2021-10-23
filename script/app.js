@@ -1,4 +1,9 @@
-
+/*const svg = (function(){
+    const paths = [...document.getElementsByTagName('path')]
+    paths.forEach(path => path.addEventListener('mouseover', function(){
+        path.style.fill = 'red'
+    }))
+})()*/
 
 
 /*******************IMAGE CHANGER*********************** */
@@ -166,7 +171,32 @@ const product = (function(){
 const cart = (function(){
     const cartProducts = document.getElementById('product-cart')
     const addToCartBtn = document.getElementById('add-to-cart')
+    const itemCounter = document.getElementById('products-in-cart')
+    let itemQuantity = 0
 
+    function manageCounterVisibility(visible){
+        if(visible){
+            itemCounter.classList.remove('hide')
+        }else{
+            itemCounter.classList.add('hide')
+        }
+    }
+
+    function countItems(adding){
+        if(adding){
+            itemQuantity++
+            itemCounter.textContent = itemQuantity
+            manageCounterVisibility(true)
+        }
+        else{
+            itemQuantity--
+            itemCounter.textContent = itemQuantity
+            if(cartProducts.children.length <= 1){
+                console.log(cartProducts.children.length)
+                manageCounterVisibility(false)
+            }
+        }
+    }
 
     function createElt(type, className){
         let elt = document.createElement(type)
@@ -209,6 +239,7 @@ const cart = (function(){
     function removeFromCart(){
         const parent = this.closest('.cart-product-wrapper')
         cartProducts.removeChild(parent)
+        countItems(false)
         if(cartProducts.childNodes.length <= 3){
             document.getElementById('empty-cart').classList.remove('hide')
             showCheckoutBtn(false)
@@ -225,16 +256,16 @@ const cart = (function(){
     }
 
     function addToCart(){
-        let wrapper = createElt('div', 'cart-product-wrapper')
-        let strong = createElt('strong')
-        let img = createElt('img', 'product-cart-image')
-        let description = createElt('div', 'product-cart-info')
-        let name = createElt('p', 'product-cart-name')
-        let price = createElt('p', 'product-cart-price')
-        let remove = createElt('div', 'delete-from-cart')
-        let eltArr = [img, description, remove]
+        const wrapper = createElt('div', 'cart-product-wrapper')
+        const strong = createElt('strong')
+        const img = createElt('img', 'product-cart-image')
+        const description = createElt('div', 'product-cart-info')
+        const name = createElt('p', 'product-cart-name')
+        const price = createElt('p', 'product-cart-price')
+        const remove = createElt('div', 'delete-from-cart')
+        const eltArr = [img, description, remove]
         remove.addEventListener('click', removeFromCart)
-        remove.classList.add('pointer')
+        remove.classList.add('pointer', 'svg-darker')
         strong.textContent = calculatePrice(getProductAmount(), getUnityPrice())
         name.textContent = getProductName()
         price.textContent = makePriceString() 
@@ -247,11 +278,11 @@ const cart = (function(){
         eltArr.forEach(elt => wrapper.appendChild(elt))
         cartProducts.appendChild(wrapper)
         showCheckoutBtn(true)
+        countItems(true)
         hideEmptyCartMsg()
     }
 
     addToCartBtn.addEventListener('click', addToCart)
-
     return {showCheckoutBtn}
 })()
 

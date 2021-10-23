@@ -86,7 +86,7 @@
     }
 }
 
-@media screen and (min-width: 475px) and (max-width: 800px){
+@media screen and (min-width: 475px) and (max-width: 820px){
     nav div{
         padding: 15px 10px;
     }
@@ -129,7 +129,7 @@
         margin: 20px 20px;
         position: relative;
         color: var(--neutral-gblue);
-        cursor: pointer;
+        font-weight: 700;
     }
 
     #category-list li:hover{
@@ -139,11 +139,11 @@
     #category-list li:before{
         content: '';
         width: 100%;
-        height: 2px;
+        height: 4px;
         background: var(--primary-orange);
         position: absolute;
         display: none;
-        top: calc(100% + 2.5rem);
+        top: calc(100% + 2.4rem);
     }
 
     #category-list li:hover:before{

@@ -76,6 +76,7 @@
 
 .product-cart-image{
     max-height: 5rem;
+    width: 15%;
     border-radius: 10px;
 }
 
